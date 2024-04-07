@@ -18,8 +18,10 @@ class FlashButton extends StatelessWidget {
       height: 100.0,
       child: OutlinedButton(
         onPressed: () {
+          if (label == '')
           isFlashOn = !isFlashOn; // 플래시 상태를 토글
           _toggleFlash(isFlashOn); // 버튼을 누를 때 _toggleFlash 함수 호출
+
         },
         child: Text(
           label,
