@@ -23,17 +23,17 @@ class _FlashUIState extends State<FlashUI> {
         Column(
           children: [
             FlashButton(
-              label: Genre.ballad.eng,
+              genre: Genre.ballad,
               onPressed: () {},
             ),
             Crossmargin(),
             FlashButton(
-              label: Genre.dance.eng,
+              genre: Genre.dance,
               onPressed: () {},
             ),
             Crossmargin(),
             FlashButton(
-              label: Genre.edm.eng,
+              genre: Genre.edm,
               onPressed: () {},
             )
           ],

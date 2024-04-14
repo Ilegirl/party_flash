@@ -1,13 +1,29 @@
 
+import 'package:flash/global/GlobalState.dart';
 import 'package:flutter/material.dart';
+import '../../../global/Genre.dart';
 import 'FlashFunction.dart';
 
-class FlashButton extends StatelessWidget {
-  final String label;
+class FlashButton extends StatefulWidget {
+  final Genre genre;
   final VoidCallback onPressed;
 
-  const FlashButton({Key? key, required this.label, required this.onPressed})
+  const FlashButton({Key? key, required this.genre, required this.onPressed})
       : super(key: key);
+
+  @override
+  _FlashButtonState createState() => _FlashButtonState();
+}
+
+class _FlashButtonState extends State<FlashButton> {
+  late String _currentLabel;
+  var globalState = GlobalState();
+
+  @override
+  void initState() {
+    super.initState();
+    _currentLabel = widget.genre.eng;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +34,12 @@ class FlashButton extends StatelessWidget {
       height: 100.0,
       child: OutlinedButton(
         onPressed: () {
-          if (label == '')
+          globalState.currentGenre = widget.genre;
           isFlashOn = !isFlashOn; // 플래시 상태를 토글
           _toggleFlash(isFlashOn); // 버튼을 누를 때 _toggleFlash 함수 호출
-
         },
         child: Text(
-          label,
+          _currentLabel,
           style: TextStyle(color: Colors.black),
         ),
       ),
