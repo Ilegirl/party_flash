@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../global/ScreenSize.dart';
 
 class TempoSlider extends StatefulWidget {
   final double value;
@@ -23,8 +24,8 @@ class _TempoSliderState extends State<TempoSlider> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 200.0,
-        height: 100.0,
+        width: 200.0 * ScreenSize.scaleWidth(context),
+        height: 100.0 * ScreenSize.scaleWidth(context),
       child : Slider(
         value: _currentSliderValue,
         max: 100,

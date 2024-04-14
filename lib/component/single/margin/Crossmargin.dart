@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../global/ScreenSize.dart';
 
 class Crossmargin extends StatelessWidget {
 
@@ -8,8 +9,8 @@ class Crossmargin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 400.0,
-      height: 40.0
+      width: 400.0 * ScreenSize.scaleWidth(context),
+      height: 60.0 * ScreenSize.scaleWidth(context)
     );
   }
 }
