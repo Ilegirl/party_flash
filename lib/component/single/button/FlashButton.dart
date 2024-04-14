@@ -2,6 +2,7 @@
 import 'package:flash/global/GlobalState.dart';
 import 'package:flutter/material.dart';
 import '../../../global/Genre.dart';
+import '../../../global/ScreenSize.dart';
 import 'FlashFunction.dart';
 
 class FlashButton extends StatefulWidget {
@@ -30,8 +31,8 @@ class _FlashButtonState extends State<FlashButton> {
     bool isFlashOn = false; // 플래시 상태를 추적하는 변수
 
     return SizedBox(
-      width: 200.0,
-      height: 100.0,
+      width: 280.0 * ScreenSize.scaleWidth(context),
+      height: 140.0 * ScreenSize.scaleWidth(context),
       child: OutlinedButton(
         onPressed: () {
           globalState.currentGenre = widget.genre;
