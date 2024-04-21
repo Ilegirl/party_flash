@@ -1,4 +1,4 @@
-import 'Genre.dart';
+import '../genre/Genre.dart';
 
 class GlobalState {
   // 현재 장르를 저장하는 private 변수
