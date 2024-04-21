@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../global/ScreenSize.dart';
-import '../../../component/single/slider/CustomSilderShape.dart';
 
 class TempoSlider extends StatefulWidget {
   final double value;
