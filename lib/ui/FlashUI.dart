@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../component/single/button/FlashButton.dart';
 import '../component/single/margin/Crossmargin.dart';
 import '../component/single/slider/TempoSlider.dart';
-import '../global/Genre.dart';
+import '../genre/Genre.dart';
 
 class FlashUI extends StatefulWidget {
   const FlashUI({Key? key}) : super(key: key);
