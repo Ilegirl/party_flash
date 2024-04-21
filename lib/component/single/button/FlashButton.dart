@@ -1,7 +1,8 @@
 
+import 'package:flash/genre/GenereFunctionExtension.dart';
 import 'package:flash/global/GlobalState.dart';
 import 'package:flutter/material.dart';
-import '../../../global/Genre.dart';
+import '../../../genre/Genre.dart';
 import '../../../global/ScreenSize.dart';
 import 'FlashFunction.dart';
 
@@ -35,9 +36,26 @@ class _FlashButtonState extends State<FlashButton> {
       height: 140.0 * ScreenSize.scaleWidth(context),
       child: OutlinedButton(
         onPressed: () {
-          globalState.currentGenre = widget.genre;
-          isFlashOn = !isFlashOn; // 플래시 상태를 토글
-          _toggleFlash(isFlashOn); // 버튼을 누를 때 _toggleFlash 함수 호출
+          if (globalState.isMusicPlaying && globalState.currentGenre == widget.genre) {
+            print("globalState.isMusicPlaying && globalState.currentGenre == widget.genre");
+            globalState.isMusicPlaying = false;
+            globalState.currentGenre = Genre.none;
+          } else if (globalState.isMusicPlaying && globalState.currentGenre != widget.genre) {
+            globalState.isMusicPlaying = false;
+            globalState.executeGenreFunction(globalState);
+            globalState.currentGenre = widget.genre;
+            globalState.isMusicPlaying = true;
+            globalState.executeGenreFunction(globalState);
+          } else if (!globalState.isMusicPlaying){
+            print("!globalState.isMusicPlaying");
+            globalState.currentGenre = widget.genre;
+            globalState.isMusicPlaying = true;
+            globalState.executeGenreFunction(globalState);
+          } else {
+            print("nothing");
+          }
+          // isFlashOn = !isFlashOn; // 플래시 상태를 토글
+          // _toggleFlash(isFlashOn); // 버튼을 누를 때 _toggleFlash 함수 호출
         },
         child: Text(
           _currentLabel,
