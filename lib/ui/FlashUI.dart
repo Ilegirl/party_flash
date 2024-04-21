@@ -20,9 +20,9 @@ class _FlashUIState extends State<FlashUI> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(20.0), // 패딩을 원하는 만큼 추가합니다.
+          padding: const EdgeInsets.all(5.0), // 패딩을 원하는 만큼 추가합니다.
           child: SizedBox(
-            width: MediaQuery.of(context).size.width * 0.8, // 화면 너비의 80%를 차지하는 너비로 설정합니다.
+            width: MediaQuery.of(context).size.width * 0.95, // 화면 너비의 80%를 차지하는 너비로 설정합니다.
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
