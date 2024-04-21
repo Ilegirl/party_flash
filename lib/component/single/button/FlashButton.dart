@@ -31,8 +31,8 @@ class _FlashButtonState extends State<FlashButton> {
     bool isFlashOn = false; // 플래시 상태를 추적하는 변수
 
     return SizedBox(
-      width: 280.0 * ScreenSize.scaleWidth(context),
-      height: 140.0 * ScreenSize.scaleWidth(context),
+      width: 350.0 * ScreenSize.scaleWidth(context),
+      height: 150.0 * ScreenSize.scaleWidth(context),
       child: OutlinedButton(
         onPressed: () {
           globalState.currentGenre = widget.genre;
