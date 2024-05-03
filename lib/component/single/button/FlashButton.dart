@@ -4,7 +4,6 @@ import 'package:flash/global/GlobalState.dart';
 import 'package:flutter/material.dart';
 import '../../../genre/Genre.dart';
 import '../../../global/ScreenSize.dart';
-import 'FlashFunction.dart';
 
 class FlashButton extends StatefulWidget {
   final Genre genre;
@@ -29,30 +28,27 @@ class _FlashButtonState extends State<FlashButton> {
 
   @override
   Widget build(BuildContext context) {
-    bool isFlashOn = false; // 플래시 상태를 추적하는 변수
 
     return SizedBox(
       width: 350.0 * ScreenSize.scaleWidth(context),
       height: 150.0 * ScreenSize.scaleWidth(context),
       child: OutlinedButton(
         onPressed: () {
-          if (globalState.isMusicPlaying && globalState.currentGenre == widget.genre) {
-            print("globalState.isMusicPlaying && globalState.currentGenre == widget.genre");
-            globalState.isMusicPlaying = false;
-            globalState.currentGenre = Genre.none;
-          } else if (globalState.isMusicPlaying && globalState.currentGenre != widget.genre) {
-            globalState.isMusicPlaying = false;
-            globalState.executeGenreFunction(globalState);
-            globalState.currentGenre = widget.genre;
-            globalState.isMusicPlaying = true;
-            globalState.executeGenreFunction(globalState);
-          } else if (!globalState.isMusicPlaying){
-            print("!globalState.isMusicPlaying");
-            globalState.currentGenre = widget.genre;
-            globalState.isMusicPlaying = true;
-            globalState.executeGenreFunction(globalState);
+          if (globalState.isMusicPlaying) {
+            if (globalState.currentGenre == widget.genre) {
+              globalState.isMusicPlaying = false;
+              globalState.currentGenre = Genre.none;
+            } else {
+              globalState.isMusicPlaying = false;
+              globalState.executeGenreFunction(globalState);
+              globalState.currentGenre = widget.genre;
+              globalState.isMusicPlaying = true;
+              globalState.executeGenreFunction(globalState);
+            }
           } else {
-            print("nothing");
+            globalState.currentGenre = widget.genre;
+            globalState.isMusicPlaying = true;
+            globalState.executeGenreFunction(globalState);
           }
           // isFlashOn = !isFlashOn; // 플래시 상태를 토글
           // _toggleFlash(isFlashOn); // 버튼을 누를 때 _toggleFlash 함수 호출
@@ -64,8 +60,4 @@ class _FlashButtonState extends State<FlashButton> {
       ),
     );
   }
-}
-
-void _toggleFlash(bool isFlashOn) {
-  FlashFunction.toggleFlash(isFlashOn); // 플래시 상태를 전달하여 toggleFlash 함수 호출
 }
