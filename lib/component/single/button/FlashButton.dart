@@ -40,7 +40,6 @@ class _FlashButtonState extends State<FlashButton> {
               globalState.currentGenre = Genre.none;
             } else {
               globalState.isMusicPlaying = false;
-              globalState.executeGenreFunction(globalState);
               globalState.currentGenre = widget.genre;
               globalState.isMusicPlaying = true;
               globalState.executeGenreFunction(globalState);
@@ -50,8 +49,6 @@ class _FlashButtonState extends State<FlashButton> {
             globalState.isMusicPlaying = true;
             globalState.executeGenreFunction(globalState);
           }
-          // isFlashOn = !isFlashOn; // 플래시 상태를 토글
-          // _toggleFlash(isFlashOn); // 버튼을 누를 때 _toggleFlash 함수 호출
         },
         child: Text(
           _currentLabel,
