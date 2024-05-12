@@ -146,7 +146,4 @@ class GenreFunctions {
 
     loop();
   }
-  void _toggleFlash(bool isFlashOn) {
-    FlashFunction.toggleFlash(isFlashOn); // 플래시 상태를 전달하여 toggleFlash 함수 호출
-  }
 }
