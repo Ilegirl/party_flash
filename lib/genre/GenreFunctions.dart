@@ -2,6 +2,7 @@ import 'dart:async'; // Completer를 사용하기 위해 import
 
 import 'package:flash/global/GlobalState.dart';
 
+import '../component/single/button/FlashFunction.dart';
 import 'Genre.dart';
 
 class GenreFunctions {
@@ -33,9 +34,45 @@ class GenreFunctions {
 
     Future<void> loop() async {
       while (globalState.isMusicPlaying) {
-        print("dance");
-        await Future.delayed(const Duration(seconds: 1));
-
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 1224));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 600));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 12));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 600));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 12));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 1836));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 600));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 12));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 1836));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 600));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 12));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
         // 완료되지 않은 Future가 있다면 루프 종료
         if (future != _currentCompleter!.future) {
           break;
@@ -51,8 +88,10 @@ class GenreFunctions {
 
     Future<void> loop() async {
       while (globalState.isMusicPlaying) {
-        print("ballad");
-        await Future.delayed(const Duration(seconds: 1));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 1836));
         if (future != _currentCompleter!.future) {
           break;
         }
@@ -67,8 +106,38 @@ class GenreFunctions {
 
     Future<void> loop() async {
       while (globalState.isMusicPlaying) {
-        print("edm");
-        await Future.delayed(const Duration(seconds: 1));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 1836));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 1836));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 612));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 600));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 12));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 600));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 12));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 600));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 12));
+        FlashFunction.turnOnFlash();
+        await Future.delayed(const Duration(milliseconds: 600));
+        FlashFunction.turnOffFlash();
+        await Future.delayed(const Duration(milliseconds: 12));
         if (future != _currentCompleter!.future) {
           break;
         }
