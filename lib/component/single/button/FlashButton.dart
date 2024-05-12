@@ -32,7 +32,7 @@ class _FlashButtonState extends State<FlashButton> {
     return SizedBox(
       width: 350.0 * ScreenSize.scaleWidth(context),
       height: 150.0 * ScreenSize.scaleWidth(context),
-      child: OutlinedButton(
+      child: ElevatedButton(
         onPressed: () {
           if (globalState.isMusicPlaying) {
             if (globalState.currentGenre == widget.genre) {
@@ -53,10 +53,20 @@ class _FlashButtonState extends State<FlashButton> {
           // isFlashOn = !isFlashOn; // 플래시 상태를 토글
           // _toggleFlash(isFlashOn); // 버튼을 누를 때 _toggleFlash 함수 호출
         },
-        child: Text(
-          _currentLabel,
-          style: TextStyle(color: Colors.black),
-        ),
+    child: Text(
+    _currentLabel,
+    style: TextStyle(
+    color: Colors.white,
+    fontSize: 30 * ScreenSize.scaleWidth(context), // 글자 크기
+    ),
+    ),
+    style: ElevatedButton.styleFrom(
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(25), // <-- Radius
+    ),
+      backgroundColor: Color(0xFF656565), // 버튼의 배경색을 656565으로 설정합니다.
+      elevation: 10, // 그림자 효과의 크기를 설정합니다.
+    ),
       ),
     );
   }
