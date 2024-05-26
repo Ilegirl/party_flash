@@ -13,137 +13,184 @@ class GenreFunctions {
     _currentCompleter?.complete(); // 현재 작업이 완료되었음을 알림
     _currentCompleter = Completer<void>(); // 새로운 Completer 생성
 
+    if (globalState.currentGenre == Genre.none) {
+      return;
+    }
+
     switch (globalState.currentGenre) {
       case Genre.dance:
-        danceWhileMusicPlaying(globalState);
+        _runGenreFunction(globalState, danceWhileMusicPlaying);
+        // danceWhileMusicPlaying(globalState);
         break;
       case Genre.ballad:
-        balladWhileMusicPlaying(globalState);
+        _runGenreFunction(globalState, balladWhileMusicPlaying);
+        // balladWhileMusicPlaying(globalState);
         break;
       case Genre.edm:
-        edmWhileMusicPlaying(globalState);
+        _runGenreFunction(globalState, edmWhileMusicPlaying);
+        // edmWhileMusicPlaying(globalState);
         break;
       case Genre.none:
         break;
     }
   }
 
-  static void danceWhileMusicPlaying(GlobalState globalState) {
+  static void _runGenreFunction(GlobalState globalState, Function loopFunction) {
     // 현재 Completer를 Future로 변환하여 Future를 저장
     final Future<void> future = _currentCompleter!.future;
 
-    Future<void> loop() async {
+    // 루프 실행
+    loopFunction(globalState, future);
+  }
+
+  static void danceWhileMusicPlaying(GlobalState globalState, Future<void> future) async {
+    // 현재 Completer를 Future로 변환하여 Future를 저장
+    // final Future<void> future = _currentCompleter!.future;
+    //
+    // Future<void> loop() async {
       while (globalState.isMusicPlaying) {
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on'); 
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         await Future.delayed(const Duration(milliseconds: 1224));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on');
         await Future.delayed(const Duration(milliseconds: 600));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         await Future.delayed(const Duration(milliseconds: 12));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on');
         await Future.delayed(const Duration(milliseconds: 600));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         await Future.delayed(const Duration(milliseconds: 12));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         await Future.delayed(const Duration(milliseconds: 1836));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on');
         await Future.delayed(const Duration(milliseconds: 600));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         await Future.delayed(const Duration(milliseconds: 12));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         await Future.delayed(const Duration(milliseconds: 1836));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on');
         await Future.delayed(const Duration(milliseconds: 600));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         await Future.delayed(const Duration(milliseconds: 12));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('dance on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('dance off');
         // 완료되지 않은 Future가 있다면 루프 종료
-        if (future != _currentCompleter!.future) {
-          break;
-        }
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
       }
-    }
+    // }
 
-    loop();
+    // loop();
   }
 
-  static void balladWhileMusicPlaying(GlobalState globalState) {
-    final Future<void> future = _currentCompleter!.future;
-
-    Future<void> loop() async {
+  static void balladWhileMusicPlaying(GlobalState globalState, Future<void> future) async {
+    // final Future<void> future = _currentCompleter!.future;
+    //
+    // Future<void> loop() async {
       while (globalState.isMusicPlaying) {
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('ballad on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('ballad off');
         await Future.delayed(const Duration(milliseconds: 1836));
-        if (future != _currentCompleter!.future) {
-          break;
-        }
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
       }
-    }
-
-    loop();
+    // }
+    //
+    // loop();
   }
 
-  static void edmWhileMusicPlaying(GlobalState globalState) {
-    final Future<void> future = _currentCompleter!.future;
-
-    Future<void> loop() async {
+  static void edmWhileMusicPlaying(GlobalState globalState, Future<void> future) async {
+    // final Future<void> future = _currentCompleter!.future;
+    //
+    // Future<void> loop() async {
       while (globalState.isMusicPlaying) {
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('edm on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('edm off');
         await Future.delayed(const Duration(milliseconds: 1836));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('edm on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('edm off');
         await Future.delayed(const Duration(milliseconds: 1836));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('edm on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('edm off');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('edm on');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('edm off');
         await Future.delayed(const Duration(milliseconds: 612));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('edm on');
         await Future.delayed(const Duration(milliseconds: 600));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('edm off');
         await Future.delayed(const Duration(milliseconds: 12));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('edm on');
         await Future.delayed(const Duration(milliseconds: 600));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('edm off');
         await Future.delayed(const Duration(milliseconds: 12));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('edm on');
         await Future.delayed(const Duration(milliseconds: 600));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('edm off');
         await Future.delayed(const Duration(milliseconds: 12));
-        FlashFunction.turnOnFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOnFlash(); print('edm on');
         await Future.delayed(const Duration(milliseconds: 600));
-        FlashFunction.turnOffFlash();
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
+        FlashFunction.turnOffFlash(); print('edm off');
         await Future.delayed(const Duration(milliseconds: 12));
-        if (future != _currentCompleter!.future) {
-          break;
-        }
+        if (globalState.currentGenre == Genre.none || future != _currentCompleter!.future) break;
       }
-    }
-
-    loop();
+    // }
+    //
+    // loop();
   }
 }
