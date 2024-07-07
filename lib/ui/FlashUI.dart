@@ -14,6 +14,18 @@ class FlashUI extends StatefulWidget {
 
 class _FlashUIState extends State<FlashUI> {
   double _currentSliderValue = 20;
+  Genre _currentGenre = Genre.none;
+  void _onFlashButtonPressed(Genre genre) {
+    setState(() {
+      if(_currentGenre == genre) {
+        // 이미 활성화된 버튼을 눌렀을 때
+        _currentGenre = Genre.none;
+      } else {
+        // 다른 버튼을 눌렀을 때
+        _currentGenre = genre;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +42,20 @@ class _FlashUIState extends State<FlashUI> {
                   children: [
                     FlashButton(
                       genre: Genre.ballad,
-                      onPressed: () {},
+                      isActive: _currentGenre == Genre.ballad,
+                      onPressed: () => _onFlashButtonPressed(Genre.ballad),
                     ),
                     Crossmargin(),
                     FlashButton(
                       genre: Genre.dance,
-                      onPressed: () {},
+                      isActive: _currentGenre == Genre.dance,
+                      onPressed: () => _onFlashButtonPressed(Genre.dance),
                     ),
                     Crossmargin(),
                     FlashButton(
                       genre: Genre.edm,
-                      onPressed: () {},
+                      isActive: _currentGenre == Genre.edm,
+                      onPressed: () => _onFlashButtonPressed(Genre.edm),
                     )
                   ],
                 ),
