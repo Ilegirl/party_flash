@@ -30,16 +30,19 @@ class _FlashUIState extends State<FlashUI> {
                   children: [
                     FlashButton(
                       genre: Genre.ballad,
+                      isActive: _currentGenre == Genre.ballad,
                       onPressed: () {},
                     ),
                     Crossmargin(),
                     FlashButton(
                       genre: Genre.dance,
+                      isActive: _currentGenre == Genre.dance,
                       onPressed: () {},
                     ),
                     Crossmargin(),
                     FlashButton(
                       genre: Genre.edm,
+                      isActive: _currentGenre == Genre.edm,
                       onPressed: () {},
                     )
                   ],

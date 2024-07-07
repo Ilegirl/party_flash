@@ -6,10 +6,15 @@ import '../../../global/ScreenSize.dart';
 
 class FlashButton extends StatefulWidget {
   final Genre genre;
+  final bool isActive;
   final VoidCallback onPressed;
 
-  const FlashButton({Key? key, required this.genre, required this.onPressed})
-      : super(key: key);
+  const FlashButton({
+    Key? key,
+    required this.genre,
+    required this.isActive, // 버튼 활성화 상태를 받습니다.
+    required this.onPressed
+  }) : super(key: key);
 
   @override
   _FlashButtonState createState() => _FlashButtonState();
