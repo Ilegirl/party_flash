@@ -56,6 +56,9 @@ class _FlashButtonState extends State<FlashButton> {
             globalState.executeGenreFunction(globalState);
           }
         },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: widget.isActive? Colors.blue : Colors.grey,
+        ),
         child: Text(
           _currentLabel,
           style: TextStyle(
