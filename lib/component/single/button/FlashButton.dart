@@ -37,24 +37,23 @@ class _FlashButtonState extends State<FlashButton> {
       height: 150.0 * ScreenSize.scaleWidth(context),
       child: ElevatedButton(
         onPressed: () {
-          if (globalState.isMusicPlaying) {
-            if (globalState.currentGenre == widget.genre) {
-              globalState.isMusicPlaying = false;
-              globalState.currentGenre = Genre.none;
-              globalState.executeGenreFunction(globalState);
+          widget.onPressed();
+          setState(() {
+
+            if (globalState.isMusicPlaying) {
+              if (globalState.currentGenre == widget.genre) {
+                globalState.isMusicPlaying = false;
+                globalState.currentGenre = Genre.none;
+              } else {
+                globalState.currentGenre = widget.genre;
+                globalState.isMusicPlaying = true;
+              }
             } else {
-              globalState.isMusicPlaying = false;
-              globalState.currentGenre = Genre.none;
-              globalState.executeGenreFunction(globalState);
               globalState.currentGenre = widget.genre;
               globalState.isMusicPlaying = true;
-              globalState.executeGenreFunction(globalState);
             }
-          } else {
-            globalState.currentGenre = widget.genre;
-            globalState.isMusicPlaying = true;
             globalState.executeGenreFunction(globalState);
-          }
+          });
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: widget.isActive? Colors.blue : Colors.grey,
