@@ -87,7 +87,7 @@ class _CustomSliderState extends State<CustomSlider> {
                       padding: EdgeInsets.only(
                           top: 60 * ScreenSize.scaleWidth(context)),
                       child: Text(
-                        '   x0.5',
+                        '  x0.5',
                         textAlign: TextAlign.left,
                         style: themeData.textTheme.bodyText1!.copyWith(
                           color: customTextColor,
