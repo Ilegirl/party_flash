@@ -69,7 +69,7 @@ class _FlashButtonState extends State<FlashButton> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25), // <-- Radius
             ),
-            elevation: 10, // 그림자 효과의 크기를 설정합니다.
+            elevation: 2, // 그림자 효과의 크기를 설정합니다.
           ),
         ),
       );
