@@ -3,6 +3,8 @@ import 'package:flash/global/GlobalState.dart';
 import 'package:flutter/material.dart';
 import '../../../genre/Genre.dart';
 import '../../../global/ScreenSize.dart';
+import '../../../theme/theme.dart';
+
 
 class FlashButton extends StatefulWidget {
   final Genre genre;
@@ -54,7 +56,7 @@ class _FlashButtonState extends State<FlashButton> {
             globalState.executeGenreFunction(globalState);
           });
         },
-        //버튼 클릭시 색상 변경
+          //버튼 클릭시 색상 변경
         style: ElevatedButton.styleFrom(
           backgroundColor: widget.isActive? Colors.blue : Colors.grey,
           shape: RoundedRectangleBorder(
@@ -70,6 +72,22 @@ class _FlashButtonState extends State<FlashButton> {
           ),
         ),
       ),
+    );
+  }
+}
+
+import 'package:flutter/material.dart';
+
+class Crossmargin extends StatelessWidget {
+
+  const Crossmargin({Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 400.0,
+      height: 60.0
     );
   }
 }
