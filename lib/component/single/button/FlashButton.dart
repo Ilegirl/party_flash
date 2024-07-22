@@ -3,6 +3,8 @@ import 'package:flash/global/GlobalState.dart';
 import 'package:flutter/material.dart';
 import '../../../genre/Genre.dart';
 import '../../../global/ScreenSize.dart';
+import '../../../theme/theme.dart';
+
 
 class FlashButton extends StatefulWidget {
   final Genre genre;
@@ -39,7 +41,6 @@ class _FlashButtonState extends State<FlashButton> {
         onPressed: () {
           widget.onPressed();
           setState(() {
-
             if (globalState.isMusicPlaying) {
               if (globalState.currentGenre == widget.genre) {
                 globalState.isMusicPlaying = false;
@@ -55,17 +56,38 @@ class _FlashButtonState extends State<FlashButton> {
             globalState.executeGenreFunction(globalState);
           });
         },
+          //버튼 클릭시 색상 변경
         style: ElevatedButton.styleFrom(
           backgroundColor: widget.isActive? Colors.blue : Colors.grey,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25), // <-- Radius
+          ),
+          elevation: 2, // 그림자 효과의 크기를 설정합니다.
         ),
         child: Text(
           _currentLabel,
           style: TextStyle(
-            color: Colors.white,
             fontSize: 30 * ScreenSize.scaleWidth(context), // 글자 크기
+            fontWeight: FontWeight.bold,// 굵기
           ),
-        )
+        ),
       ),
+    );
+  }
+}
+
+import 'package:flutter/material.dart';
+
+class Crossmargin extends StatelessWidget {
+
+  const Crossmargin({Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 400.0,
+      height: 60.0
     );
   }
 }
