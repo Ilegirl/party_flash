@@ -89,7 +89,7 @@ class _CustomSliderState extends State<CustomSlider> {
                       child: Text(
                         '  x0.5',
                         textAlign: TextAlign.left,
-                        style: themeData.textTheme.bodyText1!.copyWith(
+                        style: themeData.textTheme.bodyLarge!.copyWith(
                           color: customTextColor,
                           fontSize: 20 * ScreenSize.scaleWidth(context),
                         ),
@@ -103,7 +103,7 @@ class _CustomSliderState extends State<CustomSlider> {
                       child: Text(
                         'x1',
                         textAlign: TextAlign.center,
-                        style: themeData.textTheme.bodyText1!.copyWith(
+                        style: themeData.textTheme.bodyLarge!.copyWith(
                           color: customTextColor,
                           fontSize: 20 * ScreenSize.scaleWidth(context),
                         ),
@@ -117,7 +117,7 @@ class _CustomSliderState extends State<CustomSlider> {
                       child: Text(
                         '                  x2',
                         textAlign: TextAlign.center,
-                        style: themeData.textTheme.bodyText1!.copyWith(
+                        style: themeData.textTheme.bodyLarge!.copyWith(
                           color: customTextColor,
                           fontSize: 20 * ScreenSize.scaleWidth(context),
                         ),
