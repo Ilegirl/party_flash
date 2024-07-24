@@ -3,8 +3,6 @@ import 'package:flash/global/GlobalState.dart';
 import 'package:flutter/material.dart';
 import '../../../genre/Genre.dart';
 import '../../../global/ScreenSize.dart';
-import '../../../theme/theme.dart';
-
 
 class FlashButton extends StatefulWidget {
   final Genre genre;
