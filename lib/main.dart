@@ -20,13 +20,21 @@ class FlashApp extends StatefulWidget {
 }
 
 class _FlashState extends State<FlashApp> {
-  Future<InitializationStatus> _initGoogleMobileAds() {
-    return MobileAds.instance.initialize();
+  late Future<InitializationStatus> _initStatus;
+
+  @override
+  void initState() {
+    super.initState();
+    _initStatus = MobileAds.instance.initialize();
+    _initStatus.then((status) {
+      print('Initialization status: $status');
+    }).catchError((error) {
+      print('Initialization failed: $error');
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    _initGoogleMobileAds(); // SDK 초기화
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: CustomThemeMode.themeMode,
       builder: (context, mode, child) {
