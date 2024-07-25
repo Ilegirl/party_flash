@@ -45,13 +45,13 @@ class _FlashUIState extends State<FlashUI> {
                       isActive: _currentGenre == Genre.ballad,
                       onPressed: () => _onFlashButtonPressed(Genre.ballad),
                     ),
-                    const Crossmargin(),
+                    Crossmargin(),
                     FlashButton(
                       genre: Genre.dance,
                       isActive: _currentGenre == Genre.dance,
                       onPressed: () => _onFlashButtonPressed(Genre.dance),
                     ),
-                    const Crossmargin(),
+                    Crossmargin(),
                     FlashButton(
                       genre: Genre.edm,
                       isActive: _currentGenre == Genre.edm,
