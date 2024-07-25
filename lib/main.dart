@@ -1,11 +1,13 @@
 import 'package:flash/ui/FlashUI.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../../../global/ScreenSize.dart';
 import '../../../theme/theme.dart';
 
 void main() {
   CustomThemeMode.instance;
-  CustomThemeMode.themeMode.value = ThemeMode.light; // Ensure light mode is set initially
+  CustomThemeMode.themeMode.value =
+      ThemeMode.light; // Ensure light mode is set initially
   // CustomThemeMode.themeMode.value = ThemeMode.dark; // Ensure dark mode is set initially
   runApp(const FlashApp());
 }
@@ -18,8 +20,13 @@ class FlashApp extends StatefulWidget {
 }
 
 class _FlashState extends State<FlashApp> {
+  Future<InitializationStatus> _initGoogleMobileAds() {
+    return MobileAds.instance.initialize();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _initGoogleMobileAds(); // SDK 초기화
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: CustomThemeMode.themeMode,
       builder: (context, mode, child) {
