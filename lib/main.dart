@@ -48,10 +48,10 @@ class _FlashState extends State<FlashApp> {
       size: AdSize.banner,
       listener: BannerAdListener(onAdLoaded: (Ad ad) {
         setState(() {
+          _bannerAd = ad as BannerAd;
           _isAdLoaded = true;
         });
       }, onAdFailedToLoad: (Ad ad, LoadAdError error) {
-        ad.dispose();
         print('Ad failed to load: $error');
         ad.dispose();
       }),
