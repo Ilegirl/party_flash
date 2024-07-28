@@ -21,6 +21,8 @@ class FlashApp extends StatefulWidget {
 
 class _FlashState extends State<FlashApp> {
   late Future<InitializationStatus> _initStatus;
+  BannerAd? _bannerAd;
+  bool _isAdLoaded = false;
 
   @override
   void initState() {
@@ -28,9 +30,38 @@ class _FlashState extends State<FlashApp> {
     _initStatus = MobileAds.instance.initialize();
     _initStatus.then((status) {
       print('Initialization status: $status');
+      // 테스트 디바이스 설정
+      final RequestConfiguration configuration = RequestConfiguration(
+        testDeviceIds: ["6CDEBCFFC60F4378CB7601EC6E2F8585"],
+      );
+      MobileAds.instance.updateRequestConfiguration(configuration);
+      _loadBannerAd();
     }).catchError((error) {
       print('Initialization failed: $error');
     });
+  }
+
+  void _loadBannerAd() {
+    _bannerAd = BannerAd(
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      request: const AdRequest(),
+      size: AdSize.banner,
+      listener: BannerAdListener(onAdLoaded: (Ad ad) {
+        setState(() {
+          _isAdLoaded = true;
+        });
+      }, onAdFailedToLoad: (Ad ad, LoadAdError error) {
+        ad.dispose();
+        print('Ad failed to load: $error');
+        ad.dispose();
+      }),
+    )..load();
+  }
+
+  @override
+  void dispose() {
+    _bannerAd?.dispose();
+    super.dispose();
   }
 
   @override
@@ -65,15 +96,17 @@ class _FlashState extends State<FlashApp> {
                 ),
               ],
             ),
-            bottomNavigationBar: BottomAppBar(
-              color: mode == ThemeMode.light
-                  ? Color(0xFFD9D9D9) // Light mode bottom navigation bar color
-                  : Color(0xFFD9D9D9), // Dark mode bottom navigation bar color
-              height: 60,
-              child: Center(
-                child: Text('Advertisement'),
-              ),
-            ),
+            bottomNavigationBar: _isAdLoaded
+                ? Container(
+                    color: mode == ThemeMode.light
+                        ? Color(
+                            0xFFD9D9D9) // Light mode bottom navigation bar color
+                        : Color(
+                            0xFFD9D9D9), // Dark mode bottom navigation bar color
+                    height: 60,
+                    child: AdWidget(ad: _bannerAd!),
+                  )
+                : const SizedBox.shrink(),
           ),
         );
       },
