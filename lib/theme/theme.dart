@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flash/component/single/button/FlashButton.dart';
 
 class CustomThemeMode {
   static final CustomThemeMode instance = CustomThemeMode._internal();
@@ -72,4 +73,15 @@ class CustomThemeData {
     titleLarge: TextStyle(fontSize: 27, // 글자,
                           fontWeight: FontWeight.bold), // 기본 titleLarge 스타일
   );
+}
+
+// Extension to ThemeData for accessing button colors based on isActive and themeMode
+extension ButtonColorExtension on ThemeData {
+  Color getButtonColor(bool isActive, ThemeMode themeMode) {
+    if (themeMode == ThemeMode.light) {
+      return isActive ? Color(0xFF7882DE) : Color(0xFFE9E9E9);
+    } else {
+      return isActive ? Color(0xFF7882DE) : Color(0xFF656565);
+    }
+  }
 }

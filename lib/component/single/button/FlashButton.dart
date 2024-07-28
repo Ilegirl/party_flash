@@ -3,6 +3,7 @@ import 'package:flash/global/GlobalState.dart';
 import 'package:flutter/material.dart';
 import '../../../genre/Genre.dart';
 import '../../../global/ScreenSize.dart';
+import '../../../theme/theme.dart';
 
 class FlashButton extends StatefulWidget {
   final Genre genre;
@@ -32,6 +33,11 @@ class _FlashButtonState extends State<FlashButton> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeMode themeMode = CustomThemeMode.themeMode.value;
+    ThemeData theme = Theme.of(context);
+    Color buttonColor = theme.getButtonColor(widget.isActive, themeMode); // isActive와 themeMode에 따라 색상 설정
+
+
     return SizedBox(
       width: 350.0 * ScreenSize.scaleWidth(context),
       height: 150.0 * ScreenSize.scaleWidth(context),
@@ -56,7 +62,7 @@ class _FlashButtonState extends State<FlashButton> {
         },
           //버튼 클릭시 색상 변경
         style: ElevatedButton.styleFrom(
-          backgroundColor: widget.isActive? Colors.blue : Colors.grey,
+          primary: buttonColor, // 버튼 색상 적용
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25), // <-- Radius
           ),
