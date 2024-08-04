@@ -1,3 +1,5 @@
+import 'package:flash/genre/Genre.dart';
+import 'package:flash/genre/GenreFunctions.dart';
 import 'package:flutter/material.dart';
 import '../../../global/ScreenSize.dart';
 import '../../../component/single/slider/CustomSlider.dart';
@@ -56,6 +58,13 @@ class _TempoSliderState extends State<TempoSlider> {
                   if (widget.onChanged != null) {
                     widget.onChanged!(value);
                   }
+                  if (value == 0) {
+                    GenreFunctions.setSpeed(0.5);
+                  } else if (value == 50) {
+                    GenreFunctions.setSpeed(1.0);
+                  } else if (value == 100) {
+                    GenreFunctions.setSpeed(2.0);
+                  }
                 },
               ),
             ],
@@ -65,4 +74,3 @@ class _TempoSliderState extends State<TempoSlider> {
     );
   }
 }
-
