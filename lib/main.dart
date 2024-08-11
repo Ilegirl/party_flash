@@ -1,14 +1,20 @@
 import 'package:flash/ui/FlashUI.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'dart:ui';  // PlatformDispatcher 사용을 위해 추가
 import '../../../global/ScreenSize.dart';
 import '../../../theme/theme.dart';
 
 void main() {
+  // Get the current system brightness (light or dark)
+// Get the current system brightness (light or dark) using PlatformDispatcher
+  final Brightness systemBrightness = PlatformDispatcher.instance.platformBrightness;
+
+  // Set the initial theme mode based on the system's brightness
   CustomThemeMode.instance;
   CustomThemeMode.themeMode.value =
-      ThemeMode.light; // Ensure light mode is set initially
-  // CustomThemeMode.themeMode.value = ThemeMode.dark; // Ensure dark mode is set initially
+  systemBrightness == Brightness.light ? ThemeMode.light : ThemeMode.dark;
+
   runApp(const FlashApp());
 }
 
