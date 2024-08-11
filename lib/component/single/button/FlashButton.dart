@@ -4,18 +4,19 @@ import 'package:flutter/material.dart';
 import '../../../genre/Genre.dart';
 import '../../../global/ScreenSize.dart';
 import '../../../theme/theme.dart';
+import 'FlashFunction.dart';
 
 class FlashButton extends StatefulWidget {
   final Genre genre;
   final bool isActive;
   final VoidCallback onPressed;
 
-  const FlashButton({
-    Key? key,
-    required this.genre,
-    required this.isActive, // 버튼 활성화 상태를 받습니다.
-    required this.onPressed
-  }) : super(key: key);
+  const FlashButton(
+      {Key? key,
+      required this.genre,
+      required this.isActive, // 버튼 활성화 상태를 받습니다.
+      required this.onPressed})
+      : super(key: key);
 
   @override
   _FlashButtonState createState() => _FlashButtonState();
@@ -35,8 +36,8 @@ class _FlashButtonState extends State<FlashButton> {
   Widget build(BuildContext context) {
     ThemeMode themeMode = CustomThemeMode.themeMode.value;
     ThemeData theme = Theme.of(context);
-    Color buttonColor = theme.getButtonColor(widget.isActive, themeMode); // isActive와 themeMode에 따라 색상 설정
-
+    Color buttonColor = theme.getButtonColor(
+        widget.isActive, themeMode); // isActive와 themeMode에 따라 색상 설정
 
     return SizedBox(
       width: 350.0 * ScreenSize.scaleWidth(context),
@@ -49,6 +50,7 @@ class _FlashButtonState extends State<FlashButton> {
               if (globalState.currentGenre == widget.genre) {
                 globalState.isMusicPlaying = false;
                 globalState.currentGenre = Genre.none;
+                FlashFunction.turnOffFlash();
               } else {
                 globalState.currentGenre = widget.genre;
                 globalState.isMusicPlaying = true;
@@ -60,9 +62,9 @@ class _FlashButtonState extends State<FlashButton> {
             globalState.executeGenreFunction(globalState);
           });
         },
-          //버튼 클릭시 색상 변경
+        //버튼 클릭시 색상 변경
         style: ElevatedButton.styleFrom(
-          primary: buttonColor, // 버튼 색상 적용
+          backgroundColor: buttonColor, // 버튼 색상 적용
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25), // <-- Radius
           ),
@@ -72,7 +74,7 @@ class _FlashButtonState extends State<FlashButton> {
           _currentLabel,
           style: TextStyle(
             fontSize: 30 * ScreenSize.scaleWidth(context), // 글자 크기
-            fontWeight: FontWeight.bold,// 굵기
+            fontWeight: FontWeight.bold, // 굵기
           ),
         ),
       ),

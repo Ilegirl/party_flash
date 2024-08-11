@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../theme/theme.dart';
 
 class DonutSliderThumbShape extends SliderComponentShape {
   final double outerRadius;

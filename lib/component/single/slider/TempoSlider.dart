@@ -1,4 +1,3 @@
-import 'package:flash/genre/Genre.dart';
 import 'package:flash/genre/GenreFunctions.dart';
 import 'package:flutter/material.dart';
 import '../../../global/ScreenSize.dart';
