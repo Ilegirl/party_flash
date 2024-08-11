@@ -77,18 +77,18 @@ class _FlashState extends State<FlashApp> {
           home: Scaffold(
             body: Stack(
               children: [
-                FlashUI(),
+                const FlashUI(),
                 Positioned(
                   bottom: 0,
                   right: 0,
-                  child: Container(
+                  child: SizedBox(
                     height: 33 * ScreenSize.scaleWidth(context),
                     child: Text(
                       'ⓒ 2024. illegirls. All rights reserved.',
                       style: TextStyle(
                         color: mode == ThemeMode.light
-                            ? Color(0xFF757575)
-                            : Color(0xFFFFFFFF), // 라이트 모드와 다크 모드에 따른 색상 변경
+                            ? const Color(0xFF757575)
+                            : const Color(0xFFFFFFFF), // 라이트 모드와 다크 모드에 따른 색상 변경
                         fontSize: 17 * ScreenSize.scaleWidth(context), // 글자 크기
                       ),
                     ),
@@ -99,9 +99,9 @@ class _FlashState extends State<FlashApp> {
             bottomNavigationBar: _isAdLoaded
                 ? Container(
                     color: mode == ThemeMode.light
-                        ? Color(
+                        ? const Color(
                             0xFFD9D9D9) // Light mode bottom navigation bar color
-                        : Color(
+                        : const Color(
                             0xFFD9D9D9), // Dark mode bottom navigation bar color
                     height: 60,
                     child: AdWidget(ad: _bannerAd!),

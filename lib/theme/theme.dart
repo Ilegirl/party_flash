@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flash/component/single/button/FlashButton.dart';
 
 class CustomThemeMode {
   static final CustomThemeMode instance = CustomThemeMode._internal();
@@ -27,19 +26,19 @@ class CustomThemeMode {
 class CustomThemeData {
   static final ThemeData light = ThemeData(
     textTheme: textTheme.copyWith(
-      titleLarge: textTheme.titleLarge?.copyWith(color: Color(0xFF4E4E4E)), // Light mode 'Speed' 텍스트 스타일
+      titleLarge: textTheme.titleLarge?.copyWith(color: const Color(0xFF4E4E4E)), // Light mode 'Speed' 텍스트 스타일
     ),
     scaffoldBackgroundColor: const Color(0xFFE3E3E3),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFE9E9E9)),
-        foregroundColor: MaterialStateProperty.all<Color>(Color(0xFF4E4E4E)),
+        backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFE9E9E9)),
+        foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFF4E4E4E)),
         textStyle: MaterialStateProperty.all<TextStyle>(
-          TextStyle(
+          const TextStyle(
             fontSize: 30,
           ),
         ),
@@ -49,10 +48,10 @@ class CustomThemeData {
 
   static final ThemeData dark = ThemeData(
     textTheme: textTheme.copyWith(
-      titleLarge: textTheme.titleLarge?.copyWith(color: Color(0xFFE0E4EB)), // Dark mode 'Speed' 텍스트 스타일
+      titleLarge: textTheme.titleLarge?.copyWith(color: const Color(0xFFE0E4EB)), // Dark mode 'Speed' 텍스트 스타일
     ),
     scaffoldBackgroundColor: const Color(0xFF464646),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       // backgroundColor: const Color.fromRGBO(51, 51, 51, 1),
       // titleTextStyle: textTheme.headline1?.copyWith(color: Colors.deepOrange),
       // iconTheme: const IconThemeData(color: Colors.deepOrange),
@@ -64,7 +63,7 @@ class CustomThemeData {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF656565)),
+        backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF656565)),
       ),
     ),
   );
@@ -79,9 +78,9 @@ class CustomThemeData {
 extension ButtonColorExtension on ThemeData {
   Color getButtonColor(bool isActive, ThemeMode themeMode) {
     if (themeMode == ThemeMode.light) {
-      return isActive ? Color(0xFF7882DE) : Color(0xFFE9E9E9);
+      return isActive ? const Color(0xFF7882DE) : const Color(0xFFE9E9E9);
     } else {
-      return isActive ? Color(0xFF7882DE) : Color(0xFF656565);
+      return isActive ? const Color(0xFF7882DE) : const Color(0xFF656565);
     }
   }
 }

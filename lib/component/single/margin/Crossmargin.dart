@@ -8,7 +8,7 @@ class Crossmargin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       width: 400.0,
       height: 60.0
     );

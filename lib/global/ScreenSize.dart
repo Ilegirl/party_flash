@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ScreenSize {
-  static late double iPhoneSEWidth = 400;
-  static late double mobileWidth = 500;
+  static double iPhoneSEWidth = 400;
+  static double mobileWidth = 500;
   static late Size screenSize;
   static late double screenWidth;
   static late double screenHeight;

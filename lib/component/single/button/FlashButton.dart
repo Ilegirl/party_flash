@@ -64,7 +64,7 @@ class _FlashButtonState extends State<FlashButton> {
         },
         //버튼 클릭시 색상 변경
         style: ElevatedButton.styleFrom(
-          primary: buttonColor, // 버튼 색상 적용
+          backgroundColor: buttonColor, // 버튼 색상 적용
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25), // <-- Radius
           ),
