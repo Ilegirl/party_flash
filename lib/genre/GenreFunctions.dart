@@ -60,102 +60,12 @@ class GenreFunctions {
           future != _currentCompleter!.future) break;
       FlashFunction.turnOnFlash();
       print('dance on');
-      await Future.delayed(_getAdjustedDuration(612));
+      await Future.delayed(_getAdjustedDuration(100));
       if (globalState.currentGenre == Genre.none ||
           future != _currentCompleter!.future) break;
       FlashFunction.turnOffFlash();
       print('dance off');
-      await Future.delayed(_getAdjustedDuration(1224));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('dance on');
-      await Future.delayed(_getAdjustedDuration(600));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('dance off');
-      await Future.delayed(_getAdjustedDuration(12));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('dance on');
-      await Future.delayed(_getAdjustedDuration(600));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('dance off');
-      await Future.delayed(_getAdjustedDuration(12));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('dance on');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('dance off');
-      await Future.delayed(_getAdjustedDuration(1836));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('dance on');
-      await Future.delayed(_getAdjustedDuration(600));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('dance off');
-      await Future.delayed(_getAdjustedDuration(12));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('dance on');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('dance off');
-      await Future.delayed(_getAdjustedDuration(1836));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('dance on');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('dance off');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('dance on');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('dance off');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('dance on');
-      await Future.delayed(_getAdjustedDuration(600));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('dance off');
-      await Future.delayed(_getAdjustedDuration(12));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('dance on');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('dance off');
-      // 완료되지 않은 Future가 있다면 루프 종료
+      await Future.delayed(_getAdjustedDuration(400));
       if (globalState.currentGenre == Genre.none ||
           future != _currentCompleter!.future) break;
     }
@@ -168,12 +78,12 @@ class GenreFunctions {
           future != _currentCompleter!.future) break;
       FlashFunction.turnOnFlash();
       print('ballad on');
-      await Future.delayed(_getAdjustedDuration(612));
+      await Future.delayed(_getAdjustedDuration(200));
       if (globalState.currentGenre == Genre.none ||
           future != _currentCompleter!.future) break;
       FlashFunction.turnOffFlash();
       print('ballad off');
-      await Future.delayed(_getAdjustedDuration(1836));
+      await Future.delayed(_getAdjustedDuration(800));
       if (globalState.currentGenre == Genre.none ||
           future != _currentCompleter!.future) break;
     }
@@ -186,82 +96,12 @@ class GenreFunctions {
           future != _currentCompleter!.future) break;
       FlashFunction.turnOnFlash();
       print('edm on');
-      await Future.delayed(_getAdjustedDuration(612));
+      await Future.delayed(_getAdjustedDuration(80));
       if (globalState.currentGenre == Genre.none ||
           future != _currentCompleter!.future) break;
       FlashFunction.turnOffFlash();
       print('edm off');
-      await Future.delayed(_getAdjustedDuration(1836));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('edm on');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('edm off');
-      await Future.delayed(_getAdjustedDuration(1836));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('edm on');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('edm off');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('edm on');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('edm off');
-      await Future.delayed(_getAdjustedDuration(612));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('edm on');
-      await Future.delayed(_getAdjustedDuration(600));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('edm off');
-      await Future.delayed(_getAdjustedDuration(12));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('edm on');
-      await Future.delayed(_getAdjustedDuration(600));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('edm off');
-      await Future.delayed(_getAdjustedDuration(12));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('edm on');
-      await Future.delayed(_getAdjustedDuration(600));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('edm off');
-      await Future.delayed(_getAdjustedDuration(12));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOnFlash();
-      print('edm on');
-      await Future.delayed(_getAdjustedDuration(600));
-      if (globalState.currentGenre == Genre.none ||
-          future != _currentCompleter!.future) break;
-      FlashFunction.turnOffFlash();
-      print('edm off');
-      await Future.delayed(_getAdjustedDuration(12));
+      await Future.delayed(_getAdjustedDuration(153));
       if (globalState.currentGenre == Genre.none ||
           future != _currentCompleter!.future) break;
     }
