@@ -12,7 +12,7 @@ void main() {
 
   // Set the initial theme mode based on the system's brightness
   CustomThemeMode.instance;
-  CustomThemeMode.themeMode.value =
+  CustomThemeMode.themeMode.value =  CustomThemeMode.themeMode.value =
   systemBrightness == Brightness.light ? ThemeMode.light : ThemeMode.dark;
 
   runApp(const FlashApp());

@@ -83,4 +83,12 @@ extension ButtonColorExtension on ThemeData {
       return isActive ? const Color(0xFF7882DE) : const Color(0xFF656565);
     }
   }
+  // 글씨 색상을 반환하는 메서드 추가
+  Color getTextColor(bool isActive, ThemeMode themeMode) {
+    if (themeMode == ThemeMode.light) {
+      return isActive ? const Color(0xFFF6F6F6) : const Color(0xFF4E4E4E);
+    } else {
+      return isActive ? const Color(0xFFF6F6F6) : const Color(0xFFF6F6F6);
+    }
+  }
 }
