@@ -38,6 +38,7 @@ class _FlashButtonState extends State<FlashButton> {
     ThemeData theme = Theme.of(context);
     Color buttonColor = theme.getButtonColor(
         widget.isActive, themeMode); // isActive와 themeMode에 따라 색상 설정
+    Color textColor = theme.getTextColor(widget.isActive, themeMode); // isActive에 따라 글씨 색상 설정
 
     return SizedBox(
       width: 350.0 * ScreenSize.scaleWidth(context),
@@ -75,6 +76,7 @@ class _FlashButtonState extends State<FlashButton> {
           style: TextStyle(
             fontSize: 30 * ScreenSize.scaleWidth(context), // 글자 크기
             fontWeight: FontWeight.bold, // 굵기
+            color: textColor, // 글씨 색상 적용
           ),
         ),
       ),
