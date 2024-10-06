@@ -1,16 +1,20 @@
-# flash
+# Party Flash
+a flutter APP for anyone who needs some ✨Psychic Lighting✨ partying
 
-A mobile application developed using Flutter for Android and IOS
+![image](https://github.com/user-attachments/assets/edcca98f-715e-4f6f-9286-58487be321cf)
 
-## Getting Started
+ 
+## Developers
+🍦[Kim Hyeji](https://github.com/anisum47)  
+🥪[Jeong Wookyeong](https://github.com/WOOGAEMI)   
+🍝[Jeong Woojin](https://github.com/woojoovove)  
+🍳[Yoon Kiyeon]()  
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+|![image](https://github.com/user-attachments/assets/7ab3246a-6081-4c9c-a3d9-292709b8e982)| ![image](https://github.com/user-attachments/assets/7fb58e02-11b9-497d-91ef-d5113a62bd43)|
+|:---:|:---:|
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Available at
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To be updated...
