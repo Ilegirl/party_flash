@@ -17,4 +17,4 @@ a flutter APP for anyone who needs some ✨Psychic Lighting✨ partying
 
 ## Available at
 
-To be updated...
+[Google Play Store - Party Flash](https://play.google.com/store/apps/details?id=com.illegirl.flash)
